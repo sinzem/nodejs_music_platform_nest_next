@@ -8,3 +8,7 @@
     // nest new server - создаем новый проект на nest(server - название), удаляем все лишнее - удалил тесты и очистил src полностью
 
     // npm run start:dev - запуск
+
+    // npm i --save @nestjs/mongoose mongoose
+
+    // npm i dotenv
