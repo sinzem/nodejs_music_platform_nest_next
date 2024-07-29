@@ -1,6 +1,8 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post } from "@nestjs/common";
 import { TrackService } from "./track.service";
 import { CreateTrackDto } from "./dto/create-track.dto";
+import { ObjectId } from "mongoose";
+import { CreateCommentDto } from "./dto/create-comment.dto";
 
 
 @Controller("/tracks") 
@@ -19,11 +21,18 @@ export class TrackController {
         return this.trackService.getAll();
     }
 
-    getOne() {
-        
+    @Get(':id') /* (в адресной строке из запроса будет приходить id) */
+    getOne(@Param('id') id: ObjectId) { /* (указываем в декораторе Param, что должен прийти id и типизируем его) */
+        return this.trackService.getOne(id);
     }
     
-    delete() {
-        
+    @Delete(':id')
+    delete(@Param('id') id: ObjectId) {
+        return this.trackService.delete(id);
+    }
+
+    @Post('/comment')  /* (эндпоинт по созданию комментария) */
+    addComment(@Body() dto: CreateCommentDto) {
+        return this.trackService.addComment(dto);
     }
 }

@@ -3,7 +3,9 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
 import { Track } from './track.schema';
 
-export type CommentDocument = Comment & Document;
+export type CommentDocument = Comment & Document/*  & {
+  _id: mongoose.Types.ObjectId;
+} */;
 
 @Schema()
 export class Comment {

@@ -1,10 +1,11 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Track, TrackDocument } from "./schemas/track.schema";
-import { Model } from "mongoose";
+import { Model, ObjectId } from "mongoose";
 import { Comment, CommentDocument } from "./schemas/comment.schema";
 import { Album, AlbumDocument } from "src/album/album.schema";
 import { CreateTrackDto } from "./dto/create-track.dto";
+import { CreateCommentDto } from "./dto/create-comment.dto";
 
 
 @Injectable()
@@ -27,11 +28,21 @@ export class TrackService {
         return tracks;
     }
 
-    async getOne() {
-        
+    async getOne(id: ObjectId): Promise<Track> {
+        const track = await this.trackModel.findById(id);
+        return track;
     }
     
-    async delete() {
-        
+    async delete(id: ObjectId): Promise<ObjectId> { /* (как тип промиса автор указал ObjectId, но ts выдает ошибку) */
+        const track = await this.trackModel.findByIdAndDelete(id);
+        return track._id;  /* (метод findByIdAndDelete вернет весь удаленный обьект целиком, но на пользователя вернем только id(он создается автоматически и название начинается с подчеркивания)) */
+    }
+
+    async addComment(dto: CreateCommentDto): Promise<Comment> { /* (для добавления комментария) */
+        const track = await this.trackModel.findById(dto.trackId); /* (находим сам трек по id) */
+        const comment = await this.commentModel.create({...dto}); /* (создаем комментарий с пришедшими данными) */
+        track.comments.push(comment._id); /* (id комментария добавляем в массив comments у трека) */
+        await track.save(); /* (сохраняем изменения у трека) */
+        return comment;
     }
 }
