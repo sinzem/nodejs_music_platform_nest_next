@@ -19,4 +19,10 @@
 
 
 // Client 
-    // npx create-next-app
+    // npx create-next-app client (client - название)
+
+    // npm run dev - запускаем
+
+    // npm install @mui/material @emotion/react @emotion/styled - стили, прописываем сразу в jsx-разметке(https://mui.com/material-ui/getting-started/installation/)
+
+    // npm install @mui/icons-material - иконки
