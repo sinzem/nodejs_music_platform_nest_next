@@ -29,20 +29,23 @@ export class TrackService {
     }
 
     async getOne(id: ObjectId): Promise<Track> {
-        const track = await this.trackModel.findById(id);
+        const track = (await this.trackModel.findById(id)).populate('comments'); /* (при получении трека по id, вызываем метод populate - подтянет данные из указанных таблиц(в д.с полностью покажет комментари, без метода - только их id)) */
         return track;
     }
     
     async delete(id: ObjectId): Promise<ObjectId> { /* (как тип промиса автор указал ObjectId, но ts выдает ошибку) */
         const track = await this.trackModel.findByIdAndDelete(id);
-        return track._id;  /* (метод findByIdAndDelete вернет весь удаленный обьект целиком, но на пользователя вернем только id(он создается автоматически и название начинается с подчеркивания)) */
+        return track.id;
+        // return track._id;  /* (метод findByIdAndDelete вернет весь удаленный обьект целиком, но на пользователя вернем только id(он создается автоматически и название начинается с подчеркивания)) */
     }
 
     async addComment(dto: CreateCommentDto): Promise<Comment> { /* (для добавления комментария) */
         const track = await this.trackModel.findById(dto.trackId); /* (находим сам трек по id) */
         const comment = await this.commentModel.create({...dto}); /* (создаем комментарий с пришедшими данными) */
-        track.comments.push(comment._id); /* (id комментария добавляем в массив comments у трека) */
+        // track.comments.push(comment._id);  /* (id комментария добавляем в массив comments у трека(в монгоБД id добавляются с нижним подчеркиванием, и автор прописал так же, но ts выдает ошибку, без подчеркивания отрабатывает нормально - ниже)) */
+        track.comments.push(comment.id);
         await track.save(); /* (сохраняем изменения у трека) */
         return comment;
     }
 }
+
