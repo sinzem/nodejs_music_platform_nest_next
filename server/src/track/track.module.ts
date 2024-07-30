@@ -5,6 +5,7 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { Track, TrackSchema } from "./schemas/track.schema";
 import { Comment, CommentSchema } from "./schemas/comment.schema";
 import { Album, AlbumSchema } from "src/album/album.schema";
+import { FileService } from "src/file/file.service";
 
 /* (cоздаем изолированный модуль для работы с треками, подключаем в главный app.module) */
 @Module({  /* (в декоратор модуля передаем массивы с контроллерами и сервисами) */
@@ -14,7 +15,7 @@ import { Album, AlbumSchema } from "src/album/album.schema";
         MongooseModule.forFeature([{name: Album.name, schema: AlbumSchema}]),
     ],
     controllers: [TrackController],
-    providers: [TrackService]
+    providers: [TrackService, FileService]
 })
 export class TrackModule {
 

@@ -13,3 +13,10 @@
 
     // npm i dotenv
 
+    // npm i uuid
+
+    // npm i --save @nestjs/serve-static - для раздачи статичных файлов(музыки и изображений в д.с) с сервера
+
+
+// Client 
+    // npx create-next-app
