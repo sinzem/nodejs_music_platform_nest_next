@@ -3,7 +3,7 @@ import { InjectModel } from "@nestjs/mongoose";
 import { Track, TrackDocument } from "./schemas/track.schema";
 import { Model, ObjectId } from "mongoose";
 import { Comment, CommentDocument } from "./schemas/comment.schema";
-import { Album, AlbumDocument } from "src/album/album.schema";
+import { Album, AlbumDocument } from "src/album/schemas/album.schema";
 import { CreateTrackDto } from "./dto/create-track.dto";
 import { CreateCommentDto } from "./dto/create-comment.dto";
 import { FileService, FileType } from "src/file/file.service";

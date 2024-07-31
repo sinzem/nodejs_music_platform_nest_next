@@ -4,7 +4,7 @@ import { TrackService } from "./track.service";
 import { MongooseModule } from "@nestjs/mongoose";
 import { Track, TrackSchema } from "./schemas/track.schema";
 import { Comment, CommentSchema } from "./schemas/comment.schema";
-import { Album, AlbumSchema } from "src/album/album.schema";
+import { Album, AlbumSchema } from "src/album/schemas/album.schema";
 import { FileService } from "src/file/file.service";
 
 /* (cоздаем изолированный модуль для работы с треками, подключаем в главный app.module) */

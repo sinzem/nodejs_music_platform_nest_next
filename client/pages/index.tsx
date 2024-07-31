@@ -1,16 +1,19 @@
 import React from 'react'; 
 import NavBar from '@/components/NavBar';
 import { Button } from '@mui/material';
+import MiniLayout from '@/layouts/MiniLayout';
 
 const index = () => {
     return (
         <>
-          <NavBar />
-            <div className='center'>
-                <h1>Добро пожаловать</h1>
-                <h3>Здесь собраны лучшие треки!</h3>
-                <Button>Press!</Button>
-            </div>
+            <MiniLayout>
+              <div className='center'>
+                  <h1>Добро пожаловать</h1>
+                  <h3>Здесь собраны лучшие треки!</h3>
+                  <Button>Press!</Button>
+              </div>
+            </MiniLayout>
+            
 
             <style jsx>
               {`
