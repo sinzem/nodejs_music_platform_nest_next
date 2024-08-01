@@ -28,6 +28,10 @@
     // npm install @mui/icons-material - иконки
 
     // npm i sass
+<<<<<<< HEAD
   
     // npm i react-redux redux redux-thunk @types/react-redux next-redux-wrapper
+=======
+
+>>>>>>> 9a89dbe0bed9ded2c4ec5b68144a383b1e670550
   
