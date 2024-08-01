@@ -12,3 +12,22 @@
     // npm i --save @nestjs/mongoose mongoose
 
     // npm i dotenv
+
+    // npm i uuid
+
+    // npm i --save @nestjs/serve-static - для раздачи статичных файлов(музыки и изображений в д.с) с сервера
+
+
+// Client 
+    // npx create-next-app client (client - название)
+
+    // npm run dev - запускаем
+
+    // npm install @mui/material @emotion/react @emotion/styled - стили, прописываем сразу в jsx-разметке(https://mui.com/material-ui/getting-started/installation/)
+
+    // npm install @mui/icons-material - иконки
+
+    // npm i sass
+  
+    // npm i react-redux redux redux-thunk @types/react-redux next-redux-wrapper
+  
