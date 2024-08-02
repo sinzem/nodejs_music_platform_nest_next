@@ -15,7 +15,6 @@
     "@mui/icons-material": "^5.16.6",
     "@mui/material": "^5.16.6",
     "@mui/material-nextjs": "^5.16.6",
-<<<<<<< HEAD
     "@types/react-redux": "^7.1.33",
     "next": "14.2.5",
     "next-redux-wrapper": "^8.1.0",
@@ -24,11 +23,6 @@
     "react-redux": "^9.1.2",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
-=======
-    "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18",
->>>>>>> 9a89dbe0bed9ded2c4ec5b68144a383b1e670550
     "sass": "^1.77.8"
   },
   "devDependencies": {

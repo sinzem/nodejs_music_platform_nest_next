@@ -6,7 +6,7 @@ import React from 'react';
 
 const TrackPage = () => {
 
-    const track: ITrack = {_id: "1", name: "Track 1", artist: "Mobi", text: "Some text", listens: 7, audio: "http://localhost:5000/audio/1.mp3", picture: "http://localhost:5000/image/1.jpg", comments: []};
+    const track: ITrack = {_id: "1", name: "Track 1", artist: "Mobi", text: "Some text", listens: 7, audio: "http://localhost:5000/audio/6e37eb8c-a27e-4722-bc9a-421005136668.mp3", picture: "http://localhost:5000/image/499b67c9-b2b2-423c-af21-a510ad12925a.jpg", comments: []};
     const router = useRouter();
 
     return (
