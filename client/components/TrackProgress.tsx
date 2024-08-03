@@ -11,7 +11,7 @@ const TrackProgress: React.FC<trackProgressProps> = ({left, right, onChange}) =>
         <div style={{display: "flex"}}>
             <input
                 type="range" /* (типом проставляем бегунок) */
-                min={left} /* (минимальное значение - будет меняться в зависимости от позиции бегунка) */
+                min={0} /* (минимальное значение - будет меняться в зависимости от позиции бегунка) */
                 max={right} /* (максимальное значение) */
                 value={left} /* (текущее значение) */
                 onChange={onChange} /* (функция изменения) */

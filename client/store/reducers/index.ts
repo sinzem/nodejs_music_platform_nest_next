@@ -7,6 +7,7 @@ const rootReducer = combineReducers({
     player: playerReducer /* (добавляем редьюсер в основной) */
 })
 
+/* (добавляем hidrate(из документации), вставляем свой rootReducer) */
 export const reducer = (state: any, action: any) => {
     if (action.type === HYDRATE) {
       const nextState = {
