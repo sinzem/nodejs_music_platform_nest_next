@@ -29,5 +29,7 @@
 
     // npm i sass
 
+    // npm i axios
+
     // npm i react-redux redux redux-thunk @types/react-redux next-redux-wrapper (thunk для асинхронных запросов)
 

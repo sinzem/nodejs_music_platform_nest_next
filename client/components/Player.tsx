@@ -26,7 +26,7 @@ const Player = () => {
 
     const setAudio = () => {
         if (active) {
-            audio.src = active.audio; /* (путь к треку) */
+            audio.src = "http://localhost:5000" + active.audio; /* (путь к треку) */
             audio.volume = volume / 100; /* (громкость при запуске - по умолчанию 50, но в обьекте Audio шкала от 0 до 1, поэтому делим на 100) */
             audio.onloadedmetadata = () => { /* (после загрузки трека получаем его продолжительность) */
                 // let dur = Number((audio.duration / 60).toFixed(2))

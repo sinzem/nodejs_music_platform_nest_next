@@ -3,6 +3,7 @@
 /node_modules
 /build
 
+/server/src/static
 /server/node_modules
 /server/package-lock.json
 /server/README.md
