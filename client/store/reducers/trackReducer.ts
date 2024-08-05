@@ -1,7 +1,7 @@
 import { TrackAction, TrackActionTypes, TrackState } from "@/types/track"
 
-
-const initialState: TrackState = {
+/* (редьюсер по работе с запросами) */
+const initialState: TrackState = { /* (типизируем - получает или массив треков с БД, ил ошибку) */
     tracks: [],
     error: ''
 }

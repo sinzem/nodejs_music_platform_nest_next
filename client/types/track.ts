@@ -36,4 +36,4 @@ interface FetchTracksErrorAction {
     payload: string;
 }
 
-export type TrackAction = FetchTracksAction | FetchTracksErrorAction;
+export type TrackAction = FetchTracksAction | FetchTracksErrorAction; /* (обобщающий тип) */
