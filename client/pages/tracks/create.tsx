@@ -21,12 +21,13 @@ const Create = () => {
         if (activeStep !== 2) {
             setActiveStep(prev => prev + 1);
         } else {
+            /* (помещаем данные из инпутов  в FormData и отправляем на сервер) */
             const formData = new FormData();
             formData.append('name', name.value);
             formData.append('text', text.value);
             formData.append('artist', artist.value);
-            formData.append('picture', picture?.);
-            formData.append('audio', audio?.);
+            formData.append('picture', picture);
+            formData.append('audio', audio);
             axios.post('http://localhost:5000/tracks', formData)
                 .then(resp => router.push('/tracks'))
                 .catch(e => console.log(e));
