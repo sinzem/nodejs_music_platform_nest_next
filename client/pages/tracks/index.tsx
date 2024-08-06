@@ -54,7 +54,7 @@ const Index = () => {
                         </Grid>
                     </Box>
                     <TextField
-                        fullwidth
+                        // fullwidth
                         value={query}
                         onChange={search}    
                     />
