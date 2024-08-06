@@ -12,9 +12,9 @@ const Create = () => {
     const [activeStep, setActiveStep] = useState(0);
     const [picture, setPicture] = useState(null);
     const [audio, setAudio] = useState(null);
-    const name = useInput(''); /* (для работы с инпутами используем кастомный хук) */
-    const artist = useInput('');
-    const text = useInput('');
+    let name = useInput(''); /* (для работы с инпутами используем кастомный хук) */
+    let artist = useInput('');
+    let text = useInput('');
     const router = useRouter();
 
     const next = () => {

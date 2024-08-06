@@ -6,7 +6,7 @@ import MiniLayout from '@/layouts/MiniLayout';
 const index = () => {
     return (
         <>
-            <MiniLayout>
+            <MiniLayout title={"Музыкальная площадка"}>
               <div className='center'>
                   <h1>Добро пожаловать</h1>
                   <h3>Здесь собраны лучшие треки!</h3>

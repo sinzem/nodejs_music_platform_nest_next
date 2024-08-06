@@ -11,8 +11,8 @@ const TrackPage = ({serverTrack}: any) => {
 
     // const track: ITrack = {_id: "1", name: "Track 1", artist: "Mobi", text: "Some text", listens: 7, audio: "http://localhost:5000/audio/6e37eb8c-a27e-4722-bc9a-421005136668.mp3", picture: "http://localhost:5000/image/499b67c9-b2b2-423c-af21-a510ad12925a.jpg", comments: []}; /* (для проверки результата) */
     const [track, setTrack] = useState<ITrack>(serverTrack); /* (трек будем получать из пропсов(для получения прописана функция внизу)) */
-    const username = useInput(''); /* (для добавления комментариев используем кастомный хук - вернет value и функцию изменения состояния, прикрепляем к инпуту) */
-    const text = useInput('');
+    let username = useInput(''); /* (для добавления комментариев используем кастомный хук - вернет value и функцию изменения состояния, прикрепляем к инпуту) */
+    let text = useInput('');
     const router = useRouter();
 
     const addComment = async () => { /* (функция для добавления комментария - отправит запрос с данными из инпутов на сервер, навешиваем на кнопку отправки) */
@@ -23,14 +23,19 @@ const TrackPage = ({serverTrack}: any) => {
                 trackId: track._id 
             });
             setTrack({...track, comments: [...track.comments, response.data]}); /* (добавляем данные из созданного комментария в состояния трека(для отрисовки на странице)) */
-            
+            username.setValue('');
+            text.setValue('');
         } catch (e) {
             console.log(e);
         }
     }
 
     return (
-        <MiniLayout>
+        /* (пример построения динамического заголовка страницы) */
+        <MiniLayout 
+            title={track.name + " - " + track.artist + " | " + "Музыкальная площадка"}
+            keywords={"Музыка, артисты" + track.name + ", " + track.artist}    
+        >
             <Button
                 variant={"outlined"}
                 style={{fontSize: 32}}
